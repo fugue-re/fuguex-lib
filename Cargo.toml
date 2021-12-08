@@ -1,0 +1,62 @@
+[package]
+name = "fuguex-lib"
+version = "0.1.0"
+edition = "2021"
+authors = ["Zitai Chen <zitaichen@outlook.com>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+byteorder = "1"
+backtrace = "0.3"
+parking_lot = "0.11"
+snafu = "0.6"
+rayon = "1.5"
+log = { version = "0.4", features = ["max_level_trace", "release_max_level_warn"] }
+thiserror = "1"
+petgraph = "0.5.1"
+termion = "1.5.5"
+protobuf = {version = "2"}
+serde = { version = "1.0", features = ["derive"] }
+
+fugue = { version = "*", registry = "fugue" }
+fuguex = { version = "*", registry = "fugue", features = ["concrete"] }
+
+
+# muexe-core 			= { git = "ssh://git@git.simulacra.to:10022/muexe/muexe-core-v2", features = ["machine", "pcode", "serde_derive", "state", "database"] }
+# muexe-core-prelude 	= { git = "ssh://git@git.simulacra.to:10022/muexe/muexe-core-v2"               }
+# muexe-core-interpreter = { git = "ssh://git@git.simulacra.to:10022/muexe/muexe-core-v2"               }
+# muexe-taint 			= { git = "ssh://git@git.simulacra.to:10022/muexe/muexe-core-v2" }
+# muexe-peripheral 		= { git = "ssh://git@git.simulacra.to:10022/muexe/muexe-peripheral" }
+# muexe-symbex 			= { git = "ssh://git@git.simulacra.to:10022/muexe/muexe-symbex.git" }
+
+# [patch.'ssh://git@git.simulacra.to:10022/muexe/muexe-core-v2']
+# muexe-core 			= { path = "../muexe-core-v2/muexe-core", features = ["machine", "pcode", "state", "database"] }
+# muexe-core-prelude 	= { path = "../muexe-core-v2/muexe-core-prelude"               }
+# muexe-core-interpreter = { path = "../muexe-core-v2/muexe-core-interpreter" }
+# muexe-taint 		= {path = "../muexe-core-v2/muexe-taint"}
+
+# [patch.'ssh://git@git.simulacra.to:10022/muexe/muexe-peripheral']
+# muexe-peripheral 	= { path = "../muexe-peripheral" }
+
+# [patch.'ssh://git@git.simulacra.to:10022/muexe/muexe-symbex.git']
+# muexe-symbex 		= {path = "../muexe-symbex"}
+
+[build-dependencies]
+protoc-rust = "2.0"
+url = "2.2"
+
+# [patch.fugue]
+# fuguex = { path = '../fuguex-core/fuguex', version = "*"}
+# # fugue = { path = '../fugue-core/fugue-core', version = "*"}
+# fugue-idapro = { path = '../fugue-idapro', version = '*'}
+# fugue-ghidra = { path = '../fugue-ghidra', version = '*'}
+# fugue-db = { path = '../fugue-core/fugue-db', version = '*'}
+# fugue-ir = { path = '../fugue-core/fugue-ir', version = '*'}
+# fuguex-concrete = { path = '../fuguex-core/fuguex-concrete', version = '*'}
+# fuguex-hooks = { path = '../fuguex-core/fuguex-hooks', version = '*'}
+# fuguex-intrinsics = { path = '../fuguex-core/fuguex-intrinsics', version = '*'}
+# fuguex-loader = { path = '../fuguex-core/fuguex-loader', version = '*'}
+# fuguex-machine = { path = '../fuguex-core/fuguex-machine', version = '*'}
+# fuguex-state = { path = '../fuguex-core/fuguex-state', version = '*'}
+# fuguex-state-derive = { path = '../fuguex-core/fuguex-state-derive', version = '*'}
