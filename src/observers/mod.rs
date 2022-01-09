@@ -8,3 +8,5 @@
 // mod solver;
 
 pub mod watchpoint;
+pub mod dummy_peripheral;
+mod solver;
