@@ -20,9 +20,10 @@ protobuf = {version = "2"}
 serde = { version = "1.0", features = ["derive"] }
 
 fugue = { version = "*", registry = "fugue" }
+fugue-concolic-solver-boolector = { version = "*", registry = "fugue" }
 fuguex = { version = "*", registry = "fugue", features = ["concrete"] }
-
-
+fugue-concolic = { path = "../fugue-concolic", version = "*" }
+hashconsing = "1"
 # muexe-core 			= { git = "ssh://git@git.simulacra.to:10022/muexe/muexe-core-v2", features = ["machine", "pcode", "serde_derive", "state", "database"] }
 # muexe-core-prelude 	= { git = "ssh://git@git.simulacra.to:10022/muexe/muexe-core-v2"               }
 # muexe-core-interpreter = { git = "ssh://git@git.simulacra.to:10022/muexe/muexe-core-v2"               }
@@ -47,16 +48,23 @@ protoc-rust = "2.0"
 url = "2.2"
 
 # [patch.fugue]
-# fuguex = { path = '../fuguex-core/fuguex', version = "*"}
-# # fugue = { path = '../fugue-core/fugue-core', version = "*"}
+# fuguex = { path = '../fuguex-core/fuguex', version = "*" }
+# fugue = { path = '../fugue-core/fugue-core', version = "*"}
 # fugue-idapro = { path = '../fugue-idapro', version = '*'}
 # fugue-ghidra = { path = '../fugue-ghidra', version = '*'}
 # fugue-db = { path = '../fugue-core/fugue-db', version = '*'}
 # fugue-ir = { path = '../fugue-core/fugue-ir', version = '*'}
-# fuguex-concrete = { path = '../fuguex-core/fuguex-concrete', version = '*'}
-# fuguex-hooks = { path = '../fuguex-core/fuguex-hooks', version = '*'}
-# fuguex-intrinsics = { path = '../fuguex-core/fuguex-intrinsics', version = '*'}
-# fuguex-loader = { path = '../fuguex-core/fuguex-loader', version = '*'}
 # fuguex-machine = { path = '../fuguex-core/fuguex-machine', version = '*'}
 # fuguex-state = { path = '../fuguex-core/fuguex-state', version = '*'}
-# fuguex-state-derive = { path = '../fuguex-core/fuguex-state-derive', version = '*'}
+# fuguex-hooks = { path = '../fuguex-core/fuguex-hooks', version = '*'}
+# fuguex-concrete = { path = '../fuguex-core/fuguex-concrete', version = '*'}
+# fuguex-intrinsics = { path = '../fuguex-core/fuguex-intrinsics', version = '*'}
+# fuguex-loader = { path = '../fuguex-core/fuguex-loader', version = '*'}
+# fugue-concolic = { path = '../fugue-concolic', version = '*'}
+# fugue-static = { path = '../fugue-static', version = '*'}
+# fugue-arch = { path = '../fugue-core/fugue-arch', version = '*'}
+# fuguex-lib = {path = "../fuguex-lib", version = "*"}
+# fugue-bytes = { path = '../fugue-core/fugue-bytes', version = '*'}
+# fugue-bv = { path = '../fugue-core/fugue-bv', version = '*'}
+# fugue-fp = { path = '../fugue-core/fugue-fp', version = '*'}
+# fugue-concolic-solver-boolector = { path = '../fugue-concolic-solver-boolector', version = '*'}

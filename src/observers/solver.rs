@@ -1,6 +1,6 @@
 // use muexe_core_prelude::Address;
 // use muexe_core_prelude::LE;
-use fugue_concolic::solver::SolverContext;
+use fugue_concolic_solver_boolector::SolverContext;
 use std::marker::PhantomData;
 use std::collections::HashMap;
 // use muexe_core::pcode::Operand;
@@ -15,7 +15,7 @@ use log;
 use fugue_concolic::expr::{
     SymExpr, IVar,
 };
-use fugue_concolic::value::Value;
+// use fugue_concolic::value::Value;
 use fuguex::state::{
     pcode::PCodeState, };
 use fugue::bytes::{Order};

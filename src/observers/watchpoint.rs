@@ -5,7 +5,7 @@ use fugue::ir::{
     Address,
     IntoAddress,
     space::AddressSpace,
-    space_manager::SpaceManager};
+    };
 use fuguex::concrete::hooks::{ClonableHookConcrete, HookConcrete};
 use fuguex::hooks::types::{HookAction, HookOutcome, Error};
 use fuguex::state::{
@@ -58,7 +58,7 @@ impl <S, E> Clone for Watchpoint<S, E> {
 impl<S, E> Watchpoint<S, E>
 where S: State,
       E: std::error::Error + Send + Sync + 'static {
-    pub fn new_unboxed<A, F>(space: Arc<AddressSpace> ,address: A, kind: WatchpointKind, observer: F) -> Self 
+    pub fn new_unboxed<A, F>(space: Arc<AddressSpace> ,address: A, _kind: WatchpointKind, observer: F) -> Self 
     where A: IntoAddress, 
             S: State,
             E: std::error::Error + Send + Sync + 'static, 
@@ -83,7 +83,7 @@ where S: State + StateOps,
         &mut self,
         state: &mut Self::State,
         address: &Address,
-        size: usize,
+        _size: usize,
     ) -> Result<HookOutcome<HookAction<Self::Outcome>>, Error<Self::Error>> {
         if address == &self.address {
             // Get the value at the address
@@ -106,7 +106,7 @@ where S: State + StateOps,
         &mut self,
         state: &mut Self::State,
         address: &Address,
-        size: usize,
+        _size: usize,
         value: &[u8],
     ) -> Result<HookOutcome<HookAction<Self::Outcome>>, Error<Self::Error>> {
         if address == &self.address {

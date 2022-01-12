@@ -132,7 +132,6 @@ where S: State + StateOps,
     ) -> Result<HookOutcome<HookStepAction<Self::Outcome>>, Error<Self::Error>> {
         self.event_counter += 1;
         log::trace!("PC {}", address);
-        println!("PC {}", address);
         Ok(HookStepAction::Pass.into())
     }
 
@@ -140,7 +139,7 @@ where S: State + StateOps,
     fn hook_operation_step(
         &mut self,
         state: &mut Self::State,
-        location: &Location,
+        _location: &Location,
         operation: &PCodeOp,
     ) -> Result<HookOutcome<HookStepAction<Self::Outcome>>, Error<Self::Error>>  {
         
